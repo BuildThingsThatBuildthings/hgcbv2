@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hideout Golf Club - A New Way to Live a Golf Life</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header {
+            height: 60px; /* Make the header more narrow */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-logo {
+            transition: opacity 0.3s ease;
+        }
+
+        .join-now-button {
+            display: none;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease;
+        }
+
+        .join-now-button.glow {
+            display: block;
+            position: fixed;
+            right: 20px;
+            top: 10px;
+            opacity: 1;
+        }
+
+        .header-transparent {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header>
+        <div class="container">
+            <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66e04b81a5c7dd39c38f0c0e.png" alt="Hideout Golf Club Logo" class="main-logo">
+            <a href="#join" class="join-now-button">JOIN NOW</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66ef07b63b00e20b9fed8bfa.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <h1>A New Way to Live a Golf Life.</h1>
+            <p class="subheading">Experience Nashville's premier club, where golf, lifestyle, and community come together.</p>
+            <a href="#memberships" class="cta-button">Explore Memberships</a>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Hideout Icon" class="section-icon">
+                <h2>Key Features</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card" data-feature="trackman">
+                    <div class="feature-icon">
+                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="TrackMan Icon">
+                    </div>
+                    <h3>TrackMan Technology</h3>
+                    <p>Practice like the pros with TrackMan. Our state-of-the-art technology gives you the data to elevate every swing.</p>
+                    <a href="#trackman" class="feature-link">Learn More →</a>
+                </div>
+
+                <div class="feature-card" data-feature="locations">
+                    <div class="feature-icon">
+                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Locations Icon">
+                    </div>
+                    <h3>Two Premier Locations</h3>
+                    <p>Enjoy the flexibility to play at two top Nashville locations—North and South. The choice is yours.</p>
+                    <a href="#locations" class="feature-link">View Locations →</a>
+                </div>
+
+                <div class="feature-card" data-feature="tournaments">
+                    <div class="feature-icon">
+                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Tournament Icon">
+                    </div>
+                    <h3>Member Tournaments</h3>
+                    <p>Challenge yourself and connect with fellow golfers in monthly tournaments just for members.</p>
+                    <a href="#tournaments" class="feature-link">See Schedule →</a>
+                </div>
+
+                <div class="feature-card" data-feature="onboarding">
+                    <div class="feature-icon">
+                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Onboarding Icon">
+                    </div>
+                    <h3>Personal Onboarding</h3>
+                    <p>Start strong with a personalized onboarding and lesson. We help you set goals and a plan to reach them.</p>
+                    <a href="#coaches" class="feature-link">Meet Coaches →</a>
+                </div>
+
+                <div class="feature-card" data-feature="family">
+                    <div class="feature-icon">
+                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Family Icon">
+                    </div>
+                    <h3>Family-Friendly</h3>
+                    <p>More than just golf—our facilities welcome families with activities for everyone to enjoy.</p>
+                    <a href="#amenities" class="feature-link">See Benefits →</a>
+                </div>
+
+                <div class="feature-card" data-feature="community">
+                    <div class="feature-icon">
+                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Community Icon">
+                    </div>
+                    <h3>Golf Community</h3>
+                    <p>Join a vibrant community of golf enthusiasts. Network, learn, and grow your game together.</p>
+                    <a href="#community" class="feature-link">Join Us →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="memberships" id="memberships">
+        <div class="container">
+            <div class="section-header">
+                <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Hideout Icon" class="section-icon">
+                <h2>Memberships That Match Your Lifestyle</h2>
+            </div>
+            <p class="section-subheading">Our memberships are designed for golfers who want flexibility, community, and a premium experience. Discover how joining Hideout is a new way to live your golf life.</p>
+            
+            <div class="membership-cards">
+                <div class="membership-card">
+                    <h3>All-Inclusive Membership</h3>
+                    <h4>Full Access, One Price</h4>
+                    <p>Enjoy unlimited access to both North and South Nashville locations, TrackMan technology, and exclusive tournaments. Our All-Inclusive Membership gives you full benefits with no limits.</p>
+                    <a href="#join" class="cta-button">Start Your Membership Today</a>
+                </div>
+
+                <div class="membership-card">
+                    <h3>Flex Membership</h3>
+                    <h4>Golf When It Works for You</h4>
+                    <p>Perfect for the flexible golfer. Get access to both locations and all club amenities with options that fit your schedule.</p>
+                    <a href="#flex" class="cta-button">Learn More About Flex</a>
+                </div>
+
+                <div class="membership-card">
+                    <h3>Family Membership</h3>
+                    <h4>Something for Everyone</h4>
+                    <p>Our Family Membership includes access to golf, fitness, and family-friendly events so everyone can enjoy the club.</p>
+                    <a href="#family" class="cta-button">Join as a Family</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Hideout Section -->
+    <section class="why-hideout">
+        <div class="container">
+            <div class="section-header">
+                <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Hideout Icon" class="section-icon">
+                <h2>Why Choose Hideout Golf Club?</h2>
+            </div>
+            <p class="section-subheading">Discover a club where modern golf meets lifestyle, community, and convenience. At Hideout, it's not just about the game—it's about living a golf life.</p>
+
+            <div class="benefits">
+                <div class="benefit">
+                    <h3>Play Where You Want, When You Want</h3>
+                    <p>Our two premier locations give you the freedom to play your way across North and South Nashville.</p>
+                </div>
+
+                <div class="benefit">
+                    <h3>Practice with TrackMan Technology</h3>
+                    <p>Get the insights to play smarter, faster. TrackMan gives you real-time feedback for every swing.</p>
+                </div>
+
+                <div class="benefit">
+                    <h3>Engage in Exclusive Member Tournaments</h3>
+                    <p>Test your skills in fun, competitive tournaments designed for all levels of golfers.</p>
+                </div>
+
+                <div class="benefit">
+                    <h3>A Club for Everyone in the Family</h3>
+                    <p>Bring your family along. With activities for all ages, the Hideout is where everyone feels welcome.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/66cbb485d6d90be8f7143b41.png" alt="Hideout Icon" class="section-icon">
+                <h2>Hear from Our Members</h2>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial">
+                    <p>"Hideout Golf Club changed my approach to the game. With TrackMan and guidance from the pros, my handicap improved significantly in just a few months."</p>
+                    <cite>— John D., Member</cite>
+                </div>
+
+                <div class="testimonial">
+                    <p>"I joined for the golf, but the community and events have made me stay. It's a place where I feel at home."</p>
+                    <cite>— Sarah L., Member</cite>
+                </div>
+
+                <div class="testimonial">
+                    <p>"The family-friendly environment is fantastic. My kids love it here, and we get quality time together while I enjoy the game I love."</p>
+                    <cite>— Mark R., Family Member</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Join the Hideout Community</h2>
+            <p>Experience all Hideout has to offer with a 90-day risk-free trial.</p>
+            <a href="#join" class="cta-button">Start Your Membership Today</a>
+        </div>
+    </section>
+
+    <!-- Feature Popup Overlay -->
+    <div class="feature-popup-overlay">
+        <div class="feature-popup">
+            <button class="feature-popup-close" aria-label="Close popup">×</button>
+            <div class="feature-details">
+                <div class="feature-detail" data-feature="trackman">
+                    <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/6738edb2f9bf3d097559b779.png" alt="TrackMan Technology" class="feature-logo">
+                    <h3>TrackMan Technology</h3>
+                    <div class="feature-description">
+                        <p>Experience golf like never before with our cutting-edge TrackMan technology. Get instant feedback on your swing, track your progress, and improve your game with professional-grade analytics.</p>
+                        <ul>
+                            <li>Real-time swing analysis</li>
+                            <li>Professional-grade ball tracking</li>
+                            <li>Detailed performance metrics</li>
+                            <li>Virtual golf simulation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="feature-detail" data-feature="locations">
+                    <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/673201bbfaec9bb59076f8fd.png" 
+                         alt="Two Premier Locations" 
+                         class="feature-logo"
+                         onerror="this.style.display='none'">
+                    <h3>Two Premier Locations</h3>
+                    <div class="feature-description">
+                        <p>Choose between our two state-of-the-art facilities in Nashville, each offering unique amenities and challenges for golfers of all skill levels.</p>
+                        <div class="location-details">
+                            <div class="location-card">
+                                <h4>North Nashville</h4>
+                                <p>18-hole championship course with practice facilities</p>
+                            </div>
+                            <div class="location-card">
+                                <h4>South Nashville</h4>
+                                <p>Executive course with advanced training center</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detail" data-feature="tournaments">
+                    <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/tournaments.jpg" alt="Member Tournaments">
+                    <h3>Member Tournaments</h3>
+                    <div class="feature-description">
+                        <p>Join our exciting member tournaments and compete with fellow golf enthusiasts. Regular events for all skill levels with great prizes and networking opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="feature-detail" data-feature="onboarding">
+                    <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/onboarding.jpg" alt="Personal Onboarding">
+                    <h3>Personal Onboarding</h3>
+                    <div class="feature-description">
+                        <p>Begin your journey with a personalized onboarding session. Our PGA professionals will help assess your skills and create a custom improvement plan.</p>
+                    </div>
+                </div>
+
+                <div class="feature-detail" data-feature="family">
+                    <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/family.jpg" alt="Family-Friendly Facilities">
+                    <h3>Family-Friendly Facilities</h3>
+                    <div class="feature-description">
+                        <p>We believe golf is for everyone. Our facilities offer activities for the whole family, from junior programs to family events and social gatherings.</p>
+                    </div>
+                </div>
+
+                <div class="feature-detail" data-feature="community">
+                    <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/community.jpg" alt="Golf Community">
+                    <h3>Golf Community</h3>
+                    <div class="feature-description">
+                        <p>Join a thriving community of golf enthusiasts. Regular social events, group lessons, and networking opportunities make it easy to connect with fellow members.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const logo = document.querySelector('.main-logo');
+            const joinButton = document.querySelector('.join-now-button');
+
+            if (window.scrollY > 50) {
+                header.classList.add('header-transparent');
+                logo.style.opacity = '0';
+                joinButton.classList.add('glow');
+            } else {
+                header.classList.remove('header-transparent');
+                logo.style.opacity = '1';
+                joinButton.classList.remove('glow');
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureCards = document.querySelectorAll('.feature-card');
+            const popup = document.querySelector('.feature-popup-overlay');
+            const closeButton = document.querySelector('.feature-popup-close');
+            const featureDetails = document.querySelectorAll('.feature-detail');
+
+            // Open popup
+            featureCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const feature = this.dataset.feature;
+                    // Hide all feature details
+                    featureDetails.forEach(detail => {
+                        detail.classList.remove('active');
+                    });
+                    // Show selected feature detail
+                    const activeDetail = document.querySelector(`.feature-detail[data-feature="${feature}"]`);
+                    if (activeDetail) {
+                        activeDetail.classList.add('active');
+                    }
+                    // Show popup
+                    popup.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close popup
+            function closePopup() {
+                popup.classList.remove('active');
+                document.body.style.overflow = '';
+                // Hide all feature details after animation
+                setTimeout(() => {
+                    featureDetails.forEach(detail => {
+                        detail.classList.remove('active');
+                    });
+                }, 300);
+            }
+
+            closeButton.addEventListener('click', closePopup);
+
+            // Close on outside click
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    closePopup();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
