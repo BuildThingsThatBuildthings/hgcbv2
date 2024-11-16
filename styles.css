@@ -472,6 +472,7 @@ header .container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    padding: 0 1.5rem;
 }
 
 .feature-detail[data-feature="locations"] .location-card {
@@ -507,10 +508,24 @@ header .container {
         grid-template-columns: 1fr;
         gap: 1rem;
         margin-top: 1.5rem;
+        padding: 0 1rem;
     }
 
     .feature-detail[data-feature="locations"] .location-card {
+        text-align: center;
         padding: 1.25rem;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .feature-detail[data-feature="locations"] .location-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-detail[data-feature="locations"] .location-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 }
 
