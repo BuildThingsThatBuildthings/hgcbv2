@@ -1,4 +1,6 @@
-/* Base Styles */
+/*******************************
+ * Base Styles & Variables
+ *******************************/
 :root {
     --primary-color: #000000;
     --secondary-color: #333333;
@@ -12,12 +14,14 @@
     --spacing-xl: 6rem;
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base Typography */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -25,13 +29,6 @@ body {
     background: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-sm);
-    width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -62,7 +59,19 @@ h2 {
     padding: 0 var(--spacing-sm);
 }
 
-/* Header */
+/*******************************
+ * Layout & Container Styles
+ *******************************/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    width: 100%;
+}
+
+/*******************************
+ * Header & Navigation
+ *******************************/
 header {
     position: fixed;
     top: 0;
@@ -119,7 +128,9 @@ header .container {
     }
 }
 
-/* Section Headers */
+/*******************************
+ * Section Headers
+ *******************************/
 .section-header {
     text-align: center;
     margin-bottom: var(--spacing-lg);
@@ -130,7 +141,9 @@ header .container {
     margin-bottom: var(--spacing-sm);
 }
 
-/* Hero Section */
+/*******************************
+ * Hero Section
+ *******************************/
 .hero {
     position: relative;
     color: var(--white);
@@ -178,7 +191,9 @@ header .container {
     margin-bottom: var(--spacing-md);
 }
 
-/* CTA Buttons */
+/*******************************
+ * CTA Buttons
+ *******************************/
 .cta-button {
     display: inline-block;
     padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
@@ -197,7 +212,9 @@ header .container {
     color: var(--white);
 }
 
-/* Features Section */
+/*******************************
+ * Features Section
+ *******************************/
 .features {
     padding: var(--spacing-lg) 0;
     background-color: var(--white);
@@ -213,32 +230,32 @@ header .container {
 }
 
 .feature-card {
-    background: white;
-    border-radius: 16px;
+    background: var(--white);
+    border-radius: 12px;
     padding: 2rem;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
     cursor: pointer;
+}
+
+.feature-card .feature-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.feature-card .feature-icon img {
+    width: 60px;
+    height: 60px;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.feature-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.feature-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
 
 .feature-card h3 {
@@ -310,7 +327,9 @@ header .container {
     border-color: #333;
 }
 
-/* General Feature Popup Styles */
+/*******************************
+ * General Feature Popup Styles
+ *******************************/
 .feature-popup-overlay {
     position: fixed;
     top: 0;
@@ -500,7 +519,9 @@ header .container {
     line-height: 1.4;
 }
 
-/* Membership Section */
+/*******************************
+ * Membership Section
+ *******************************/
 .memberships {
     padding: var(--spacing-lg) 0;
     background: var(--light-bg);
@@ -520,7 +541,9 @@ header .container {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Why Hideout Section */
+/*******************************
+ * Why Hideout Section
+ *******************************/
 .why-hideout {
     padding: 0;  
     background: var(--light-bg);
@@ -557,71 +580,9 @@ header .container {
     transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .why-hideout {
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .benefits {
-        height: calc(100vh - 200px); 
-        overflow-y: auto;
-        scroll-snap-type: y mandatory;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-    }
-
-    .benefit {
-        min-height: 100%;
-        width: 100%;
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-        margin: 0;
-        border-radius: 0;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
-
-    .benefit h3 {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .benefit p {
-        font-size: 1.1rem;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .benefits {
-        height: calc(100vh - 180px);
-    }
-
-    .benefit {
-        padding: 1.5rem;
-    }
-
-    .benefit h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .section-header {
-        padding: 3rem 0 1.5rem;
-    }
-}
-
-/* Testimonials Section */
+/*******************************
+ * Testimonials Section
+ *******************************/
 .testimonials {
     padding: var(--spacing-lg) 0;
     background: var(--light-bg);
@@ -641,7 +602,9 @@ header .container {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Lifestyle Section */
+/*******************************
+ * Lifestyle Section
+ *******************************/
 .lifestyle {
     padding: 4rem 0;
     background: var(--white);
@@ -781,6 +744,9 @@ header .container {
     background: #333;
 }
 
+/*******************************
+ * Responsive Styles
+ *******************************/
 @media (max-width: 1024px) {
     .lifestyle-content {
         grid-template-columns: 1fr;
@@ -816,7 +782,9 @@ header .container {
     }
 }
 
-/* Tablet Breakpoint */
+/*******************************
+ * Tablet Breakpoint
+ *******************************/
 @media (max-width: 1024px) {
     .lifestyle-content {
         grid-template-columns: 1fr;
@@ -835,7 +803,9 @@ header .container {
     }
 }
 
-/* Mobile Breakpoint */
+/*******************************
+ * Mobile Breakpoint
+ *******************************/
 @media (max-width: 640px) {
     .lifestyle-content {
         padding: 0 1rem;
@@ -850,7 +820,9 @@ header .container {
     }
 }
 
-/* Mobile responsiveness */
+/*******************************
+ * Mobile responsiveness
+ *******************************/
 @media (max-width: 968px) {
     .lifestyle-grid {
         grid-template-columns: 1fr;
@@ -908,7 +880,9 @@ header .container {
     }
 }
 
-/* Media Queries */
+/*******************************
+ * Media Queries
+ *******************************/
 @media (max-width: 768px) {
     :root {
         --spacing-lg: 3rem;
@@ -948,7 +922,9 @@ header .container {
     }
 }
 
-/* Touch Device Optimizations */
+/*******************************
+ * Touch Device Optimizations
+ *******************************/
 @media (hover: none) {
     .feature-card:hover {
         transform: none;
@@ -960,7 +936,9 @@ header .container {
     }
 }
 
-/* CTA Banner */
+/*******************************
+ * CTA Banner
+ *******************************/
 .cta-banner {
     background-color: var(--primary-color);
     color: var(--white);
@@ -972,7 +950,9 @@ header .container {
     color: var(--white);
 }
 
-/* Responsive Design */
+/*******************************
+ * Responsive Design
+ *******************************/
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -1009,7 +989,9 @@ header .container {
     }
 }
 
-/* Popup Styles */
+/*******************************
+ * Popup Styles
+ *******************************/
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -1142,7 +1124,9 @@ header .container {
     background-color: var(--secondary-color);
 }
 
-/* Mobile Optimization for Popup */
+/*******************************
+ * Mobile Optimization for Popup
+ *******************************/
 @media (max-width: 640px) {
     .popup-content {
         border-radius: 12px;
@@ -1176,27 +1160,9 @@ header .container {
     }
 }
 
-    .join-form {
-        padding: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 10px 12px;
-        font-size: 15px;
-    }
-
-    .submit-button {
-        padding: 12px;
-    }
-}
-
-/* Video container styles */
+/*******************************
+ * Video container styles
+ *******************************/
 .video-container {
     position: relative;
     width: 100%;
@@ -1245,7 +1211,9 @@ header .container {
     color: var(--secondary-color);
 }
 
-/* Floating Join Button */
+/*******************************
+ * Floating Join Button
+ *******************************/
 .floating-join-button {
     position: fixed;
     bottom: 20px;
@@ -1275,4 +1243,16 @@ header .container {
     color: var(--primary-color);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
+}
+
+.feature-card .feature-icon {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.feature-card .feature-icon img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: block;
 }
