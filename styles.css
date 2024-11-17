@@ -522,14 +522,111 @@ header .container {
 
 /* Why Hideout Section */
 .why-hideout {
-    padding: var(--spacing-lg) 0;
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.section-subheading {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
 }
 
 .benefits {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-md);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 var(--spacing-sm);
+}
+
+.benefit {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+}
+
+.benefit h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.benefit p {
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .benefits {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1.5rem;
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .benefit {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2.5rem;
+        margin: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .benefit h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .benefit p {
+        font-size: 1.2rem;
+    }
+
+    .why-hideout {
+        padding: 4rem 0;
+        overflow: hidden;
+    }
+
+    .section-subheading {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit {
+        padding: 2rem;
+    }
+
+    .benefit h3 {
+        font-size: 1.75rem;
+    }
+
+    .benefit p {
+        font-size: 1.1rem;
+    }
+
+    .benefits {
+        padding: 0 1rem;
+    }
 }
 
 /* Testimonials Section */
@@ -554,23 +651,19 @@ header .container {
 
 /* Lifestyle Section */
 .lifestyle {
-    padding: 0;
+    padding: 4rem 0;
     background: var(--white);
-    position: relative;
-    margin-top: -6rem;
 }
 
 .lifestyle-header {
     text-align: center;
     margin-bottom: 3rem;
-    padding-top: 2rem;
 }
 
 .lifestyle-content {
     display: grid;
-    grid-template-columns: minmax(auto, 500px) 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    align-items: flex-start;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -578,13 +671,9 @@ header .container {
 
 .lifestyle-video-wrapper {
     width: 100%;
-    max-width: 500px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transform: scale(0.85);
-    transform-origin: top left;
-    margin-top: 0;
 }
 
 .lifestyle-video {
@@ -594,14 +683,16 @@ header .container {
     border-radius: 12px;
 }
 
+.lifestyle-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .lifestyle-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    height: 100%;
-    transform: scale(1.15);
-    transform-origin: top center;
-    margin-top: 0;
 }
 
 .image-wrapper {
@@ -631,55 +722,139 @@ header .container {
     font-weight: 500;
 }
 
-/* Tablet Breakpoint */
+.contact-form-wrapper {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.contact-form-wrapper h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.contact-form-wrapper p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #333;
+}
+
 @media (max-width: 1024px) {
-    .lifestyle {
-        margin-top: 0;
-        padding: 2rem 0;
+    .lifestyle-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .lifestyle-header {
-        padding-top: 0;
-    }
-
-    .lifestyle-video-wrapper {
+    .lifestyle-right-column {
+        max-width: 900px;
         margin: 0 auto;
-        transform: scale(0.9);
-        transform-origin: top center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .lifestyle-content {
+        padding: 0 1rem;
     }
 
     .lifestyle-images {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .contact-form-wrapper h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-form-wrapper p {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+    .lifestyle-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .lifestyle-video-wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .lifestyle-right-column {
         max-width: 900px;
         margin: 0 auto;
-        transform: scale(1.05);
-        transform-origin: top center;
+        width: 100%;
     }
 }
 
 /* Mobile Breakpoint */
 @media (max-width: 640px) {
-    .lifestyle {
-        margin-top: 0;
-        padding: 2rem 0;
-    }
-
-    .lifestyle-header {
-        padding-top: 0;
-        margin-bottom: 2rem;
-    }
-
     .lifestyle-content {
         padding: 0 1rem;
     }
 
-    .lifestyle-video-wrapper {
-        transform: scale(1);
-    }
-
     .lifestyle-images {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        transform: scale(1);
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
     }
 }
 

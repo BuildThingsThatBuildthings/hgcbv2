@@ -169,83 +169,40 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class="lifestyle-images">
-                    <div class="image-wrapper">
-                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/67393abb732b007814318adb.png" alt="Before transformation" class="lifestyle-image">
-                        <span class="image-label">Before</span>
+                <div class="lifestyle-right-column">
+                    <div class="lifestyle-images">
+                        <div class="image-wrapper">
+                            <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/67393abb732b007814318adb.png" alt="Before transformation" class="lifestyle-image">
+                            <span class="image-label">Before</span>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/6739434cf5dd35402c7e979c.png" alt="After transformation" class="lifestyle-image">
+                            <span class="image-label">After</span>
+                        </div>
                     </div>
-                    <div class="image-wrapper">
-                        <img src="https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/67393add732b00190b318add.png" alt="After transformation" class="lifestyle-image">
-                        <span class="image-label">After</span>
+                    <div class="contact-form-wrapper">
+                        <h3>Contact Us</h3>
+                        <p>Find out how we can help you live your best golf life.</p>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Tell us about your golf goals" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Get Started</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('lifestyleVideo');
-            
-            function initVideo() {
-                // Reset the video source with the current time
-                const currentTime = new Date().getTime();
-                const videoSrc = `https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/673935e6e3d9714f4266319c.mov?t=${currentTime}`;
-                
-                // Create new source elements
-                const mp4Source = document.createElement('source');
-                mp4Source.src = videoSrc;
-                mp4Source.type = 'video/mp4';
-                
-                const movSource = document.createElement('source');
-                movSource.src = videoSrc;
-                movSource.type = 'video/quicktime';
-                
-                // Clear existing sources
-                while (video.firstChild) {
-                    video.removeChild(video.firstChild);
-                }
-                
-                // Add new sources
-                video.appendChild(mp4Source);
-                video.appendChild(movSource);
-                
-                // Load and play
-                video.load();
-                video.play().catch(function(error) {
-                    console.log("Video play failed, retrying...", error);
-                    setTimeout(initVideo, 1000);
-                });
-            }
-            
-            // Initialize video
-            initVideo();
-            
-            // Add event listeners
-            video.addEventListener('loadstart', () => console.log('Video load started'));
-            video.addEventListener('loadeddata', () => console.log('Video data loaded'));
-            video.addEventListener('playing', () => console.log('Video is playing'));
-            video.addEventListener('error', (e) => {
-                console.error('Video error:', video.error);
-                setTimeout(initVideo, 1000);
-            });
-            
-            // Handle page visibility
-            document.addEventListener('visibilitychange', function() {
-                if (document.visibilityState === 'visible') {
-                    initVideo();
-                }
-            });
-            
-            // Periodically check video status
-            setInterval(function() {
-                if (video.paused && document.visibilityState === 'visible') {
-                    console.log('Video paused, attempting to restart...');
-                    initVideo();
-                }
-            }, 5000);
-        });
-    </script>
 
     <!-- Why Hideout Section -->
     <section class="why-hideout">
@@ -439,6 +396,70 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('lifestyleVideo');
+            
+            function initVideo() {
+                // Reset the video source with the current time
+                const currentTime = new Date().getTime();
+                const videoSrc = `https://storage.googleapis.com/msgsndr/RWD1uKPwFu84Zcm7Go2Q/media/673935e6e3d9714f4266319c.mov?t=${currentTime}`;
+                
+                // Create new source elements
+                const mp4Source = document.createElement('source');
+                mp4Source.src = videoSrc;
+                mp4Source.type = 'video/mp4';
+                
+                const movSource = document.createElement('source');
+                movSource.src = videoSrc;
+                movSource.type = 'video/quicktime';
+                
+                // Clear existing sources
+                while (video.firstChild) {
+                    video.removeChild(video.firstChild);
+                }
+                
+                // Add new sources
+                video.appendChild(mp4Source);
+                video.appendChild(movSource);
+                
+                // Load and play
+                video.load();
+                video.play().catch(function(error) {
+                    console.log("Video play failed, retrying...", error);
+                    setTimeout(initVideo, 1000);
+                });
+            }
+            
+            // Initialize video
+            initVideo();
+            
+            // Add event listeners
+            video.addEventListener('loadstart', () => console.log('Video load started'));
+            video.addEventListener('loadeddata', () => console.log('Video data loaded'));
+            video.addEventListener('playing', () => console.log('Video is playing'));
+            video.addEventListener('error', (e) => {
+                console.error('Video error:', video.error);
+                setTimeout(initVideo, 1000);
+            });
+            
+            // Handle page visibility
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'visible') {
+                    initVideo();
+                }
+            });
+            
+            // Periodically check video status
+            setInterval(function() {
+                if (video.paused && document.visibilityState === 'visible') {
+                    console.log('Video paused, attempting to restart...');
+                    initVideo();
+                }
+            }, 5000);
+        });
+    </script>
 
     <script>
         let lastScrollTop = 0;
